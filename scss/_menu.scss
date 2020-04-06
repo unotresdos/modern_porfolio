@@ -43,7 +43,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
+  //opacity: 0.9;
   visibility: hidden;
 
   &.show {
@@ -70,6 +70,7 @@
     list-style: none;
     transform: translate3d(0, -100%, 0);
     @include easeIn;
+    opacity: 0.9;
 
     &.show {
       // Slide in from top
@@ -79,7 +80,7 @@
 
   // Branding Side
   &-branding {
-    background: lighten($color: $primary-color, $amount: 5); //$primary-color;
+    background: rgba($color: $primary-color, $alpha: 0.5);
     transform: translate3d(0, 100%, 0);
     @include easeIn;
 
@@ -91,9 +92,10 @@
     .portrait {
       width: 250px;
       height: 259px;
-      background: url("../img/portrait2.png");
+      background: (url("../img/portrait2.png"));
+
       border-radius: 50%;
-      border: solid 2px $secondary-color;
+      border: solid 4px $secondary-color;
     }
   }
   .nav-item {
@@ -116,13 +118,14 @@
     font-size: 30px;
     text-transform: uppercase;
     padding: 1rem 0;
-    font-weight: 300;
+    font-weight: 450;
     color: #fff;
     text-decoration: none;
     @include easeIn;
 
     &:hover {
       color: $secondary-color;
+      @include easeIn;
     }
   }
 }
